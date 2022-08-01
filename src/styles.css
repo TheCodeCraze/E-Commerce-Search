@@ -1,0 +1,156 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 15px;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+header {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+
+.item-search {
+  width: 190px;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  background-color: #f5f5f5;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 10px 5px;
+}
+
+.Content {
+  background-color: #f5f5f5;
+  width: 100%;
+  padding: 12px 0;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.Item {
+  background-color: #fff;
+  height: 530px;
+  width: 250px;
+  border-radius: 18px;
+  position: relative;
+}
+
+.item-img {
+  height: 55%;
+  width: 100%;
+  border-radius: 18px 18px 0 0;
+}
+
+.item-text {
+  height: 45%;
+  padding: 10px;
+}
+
+.item-name {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.item-price {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ff8c00;
+}
+
+.item-discount {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+.org-price {
+  color: #a9a9a9;
+  text-decoration-line: line-through;
+  text-decoration-thickness: 1.5px;
+}
+
+.discount {
+  width: 35px;
+  height: 20px;
+  background-color: rgba(255, 153, 153, 0.5);
+  color: #ff0000;
+  border-radius: 7.5px;
+}
+
+.discount > p {
+  padding: 2.5px 5.5px;
+}
+
+.Location {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+  margin: 5px 0;
+}
+
+.Location > .marker {
+  width: 20px;
+}
+
+.Location > .detail {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #a9a9a9;
+}
+
+.Rating {
+  display: flex;
+  align-items: center;
+  gap: 3.5px;
+}
+
+.value,
+.count {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.count {
+  color: #a9a9a9;
+}
+
+.item-select {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  padding: 10px 0;
+  text-align: center;
+  color: #fff;
+  font-weight: 700;
+  background-color: #00bfff;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
