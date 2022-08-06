@@ -7,6 +7,7 @@ import "../../src/styles.css";
 const App = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(0);
+  const [isProduct, setProduct] = useState(false);
 
   const handlePageChange = (e) => {
     setCurrentPage(e.selected);
@@ -15,8 +16,13 @@ const App = () => {
   return (
     <div className="App">
       <Header searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-      <Content searchTerm={searchTerm} currentPage={currentPage} />
-      {searchTerm && (
+      <Content
+        searchTerm={searchTerm}
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+        setProduct={setProduct}
+      />
+      {isProduct && (
         <ReactPaginate
           previousLabel={"Previous"}
           nextLabel={"Next"}
