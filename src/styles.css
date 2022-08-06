@@ -30,12 +30,17 @@ header {
   width: 190px;
   outline: none;
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
   background-color: #f5f5f5;
   font-family: "Montserrat", sans-serif;
   font-size: 1rem;
   font-weight: 500;
-  padding: 10px 5px;
+  padding: 10px 10px;
+  transition: all 2s ease-in;
+}
+
+.item-search:focus {
+  outline: solid #ff8c00 1000px;
 }
 
 .Content {
@@ -47,6 +52,8 @@ header {
   justify-content: center;
   gap: 12px;
   margin-bottom: 15px;
+  position: relative;
+  z-index: 2;
 }
 
 .Item {

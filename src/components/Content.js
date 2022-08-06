@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Item from "./Item";
 
-const Content = ({ searchTerm, currentPage }) => {
+const Content = ({ searchTerm, currentPage, setCurrentPage, setProduct }) => {
   const [products, getProducts] = useState(null);
+  const [val, setVal] = useState(false);
 
   useEffect(() => {
     const getData = async () => {
@@ -10,10 +11,21 @@ const Content = ({ searchTerm, currentPage }) => {
         const res = await fetch(
           `https://www.blibli.com/backend/search/products?searchTerm=${searchTerm}&start=${currentPage}&itemPerPage=24`
         );
-        const data = await res.json();
-        getProducts(data.data.products);
+        if (res.status === 200) {
+          const data = await res.json();
+          getProducts(data.data.products);
+          setCurrentPage(0);
+          setProduct(true);
+          setVal(false);
+        } else {
+          getProducts(null);
+          setProduct(false);
+          setVal(true);
+        }
       } else {
         getProducts(null);
+        setProduct(false);
+        setVal(false);
       }
     };
     getData();
@@ -33,6 +45,13 @@ const Content = ({ searchTerm, currentPage }) => {
             review={product.review}
           />
         ))}
+      {!val ? (
+        !products ? (
+          <h4>Search for products</h4>
+        ) : null
+      ) : (
+        <h4>No products found</h4>
+      )}
     </section>
   );
 };
